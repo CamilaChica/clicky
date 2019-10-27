@@ -4,7 +4,7 @@
 }
 
 h1 {
-    background-color: rgb(247, 248, 238);
+
     padding: 20px;
     padding-top: 0;
     margin-left: 620px;
@@ -14,9 +14,25 @@ h1 {
     font-size: 80px;
 }
 
+.Homph1 {
+    background-color: white;
+    padding: 40px;
+    font-family: 'Indie Flower', cursive;
+    color: #6b5b95;
+    font-size: 80px;
+}
+
 h2 h3 {
     font-family: 'Permanent Marker', cursive;
     color: #d64161;
+}
+
+h4 {
+    font-family: 'Permanent Marker', cursive;
+    text-align: center;
+    display: inline-block;
+    margin-bottom: 300px;
+
 }
 
 .card-component{
