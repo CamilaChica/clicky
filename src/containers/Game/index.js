@@ -43,11 +43,12 @@ class Game extends Component
             this.setState({
                 clickedCards:[],
                 score:0
+                cards:randomizeArray(this.state.cards)
             })
         }
         else
         {
-            this.setState({clickedCards:[...this.state.clickedCards,card.id],score:this.state.score+1,highestScore:Math.max(this.state.score+1,this.state.highestScore)})
+            this.setState({cards:randomizeArray(this.state.cards),clickedCards:[...this.state.clickedCards,card.id],score:this.state.score+1,highestScore:Math.max(this.state.score+1,this.state.highestScore)})
         }
     }
 
