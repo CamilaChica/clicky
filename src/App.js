@@ -12,19 +12,20 @@ constructor(props)
 {
   super(props);
   this.state={
-    authenticated:false
+    authenticated:false,
+    email:""
   }
 }
 
-login=()=>{
-  this.setState({authenticated:true})
+login=(user)=>{
+  this.setState({authenticated:true,email:user.email})
 }
 
 render()
 {
   return <Router>
   <Switch>
-  {this.state.authenticated&&<Route path="/game" component={Game}/>}
+  {this.state.authenticated&&<Route path="/game" component={()=><Game email={this.state.email} />} />}
   <Route component={()=><HomePage onLogIn={this.login} authenticated={this.state.authenticated} />} />    
   </Switch>
 </Router>;

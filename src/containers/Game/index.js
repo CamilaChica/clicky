@@ -92,6 +92,7 @@ class Game extends Component
     {
         console.log(this.state.clickedCards)
         return <div className="bg">
+        <h4>{this.props.email}</h4>
         <h1><b>Tasty Ice Cream</b></h1>
         <div className="row">
             <div className="col-6">

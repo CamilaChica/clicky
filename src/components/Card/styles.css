@@ -3,6 +3,11 @@
     background-color: rgb(246, 247, 234);
 }
 
+h2 h3 {
+    font-family: 'Permanent Marker', cursive;
+    color: #d64161;
+}
+
 h1 {
 
     padding: 20px;
@@ -22,17 +27,18 @@ h1 {
     font-size: 80px;
 }
 
-h2 h3 {
-    font-family: 'Permanent Marker', cursive;
-    color: #d64161;
+.inputs {
+    margin-top: 300px;
 }
 
 h4 {
     font-family: 'Permanent Marker', cursive;
     text-align: center;
     display: inline-block;
-    margin-bottom: 300px;
+}
 
+.lptg {
+    margin-top: 300px;
 }
 
 .card-component{
