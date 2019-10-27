@@ -75,4 +75,4 @@ Reminder: Submission on BCS
 
 Please submit both the deployed GitHub Pages link to your homework AND the link to the Github Repository!
 
-![alt text](public\assets\images\clicky.jpg)
+![alt text](public/assets/images/clicky.jpg)
