@@ -1,7 +1,11 @@
 import React from 'react';
+import './styles.css';
 
-const Card=()=>{
-    return <div className="col-3">
-        <img src="" />
+const Card=(props)=>{
+    return <div  onClick={props.onClick} 
+    className="col-3 card-component">
+        <img src={props.image}/>
     </div>
 }
+
+export default Card;
