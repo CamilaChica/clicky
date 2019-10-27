@@ -6,7 +6,7 @@ class Game extends Component
 
     cards=[
         {
-        id:"choclate",
+        id:"Cocoa",
         image:"https://www.modernhoney.com/wp-content/uploads/2018/08/Homemade-Chocolate-Ice-Cream-1.jpg"
         },
         {
@@ -28,18 +28,41 @@ class Game extends Component
     {
         super(props);
         this.state={
-            cards:this.cards
+            cards:this.cards,
+            clickedCards:[],
+            score:0,
+            highestScore:0
         }
     }
 
     cardClicked=(card)=>{
-        alert(card+" card clicked!")
+        if(this.state.clickedCards.includes(card.id))
+        {
+            alert("You lose!");
+            this.setState({
+                clickedCards:[],
+                score:0
+            })
+        }
+        else
+        {
+            this.setState({clickedCards:[...this.state.clickedCards,card.id],score:this.state.score+1,highestScore:Math.max(this.state.score+1,this.state.highestScore)})
+        }
     }
 
     render()
     {
+        console.log(this.state.clickedCards)
         return <div>
-        <h1>This is the clicky game</h1>
+        <h1><b>Tasty Ice Cream</b></h1>
+        <div className="row">
+            <div className="col-6">
+            <h2><b>Your Score: {this.state.score}</b></h2>
+            </div>
+            <div className="col-6">
+            <h2>Your Highest Score: {this.state.highestScore}</h2>
+            </div>
+        </div>
         <div className="row">
         {this.state.cards.map((card,index)=><Card key={index} onClick={()=>this.cardClicked(card)} image={card.image} />)}
         </div>
