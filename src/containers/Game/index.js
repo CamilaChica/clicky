@@ -22,6 +22,23 @@ class Game extends Component
         id:"Cookies and cream",
         image:"https://www.simplyrecipes.com/wp-content/uploads/2018/02/Vegan-Mint-Chocolate-Chip-Ice-Cream-6-HORIZONTAL-LEAD.jpg"
         },
+        {
+        id:"Coffee",
+        image:"https://popsypops.com/wp-content/uploads/chocoloco_compressed.jpg"
+        },
+        {
+        id:"Tres Leches",
+        image:"https://www.melskitchencafe.com/wp-content/uploads/tres-leches-cupcakes6-480x360.jpg"
+        },
+        {
+        id:"Morellia",
+        image:"https://www.capannaris.com/wp-content/uploads/2016/02/blackberry-chocolate-ice-cream.jpg"
+        },
+        {
+        id:"Sundae",
+        image:"https://checkplease.wttw.com/sites/default/files/blog-images/Filini-gelato.jpg"
+        }
+
     ]
 
 
@@ -37,9 +54,10 @@ class Game extends Component
     }
 
     cardClicked=(card)=>{
+        
         if(this.state.clickedCards.includes(card.id))
         {
-            showMessage("You lose!");
+            showMessage("You lose!!");
             this.setState({
                 clickedCards:[],
                 score:0,
@@ -48,7 +66,11 @@ class Game extends Component
         }
         else
         {
-            this.setState({cards:randomizeArray(this.state.cards),clickedCards:[...this.state.clickedCards,card.id],score:this.state.score+1,highestScore:Math.max(this.state.score+1,this.state.highestScore)})
+            this.setState({
+                cards:randomizeArray(this.state.cards),
+                clickedCards:[...this.state.clickedCards,card.id],
+                score:this.state.score+1,
+                highestScore:Math.max(this.state.score+1,this.state.highestScore)})
         }
     }
 
