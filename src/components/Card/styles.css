@@ -1,20 +1,27 @@
-h1 {
+.bg {
+
     background-color: rgb(246, 247, 234);
-    padding: 30px;
-    margin-left: 560px;
-    margin-right: 550px;
-    font-family: 'Indie Flower', cursive;
-    color: #6b5b95;
-    font-size: 100px;
 }
 
-h2 {
+h1 {
+    background-color: rgb(247, 248, 238);
+    padding: 20px;
+    padding-top: 0;
+    margin-left: 620px;
+    margin-right: 600px;
+    font-family: 'Indie Flower', cursive;
+    color: #6b5b95;
+    font-size: 80px;
+}
+
+h2 h3 {
     font-family: 'Permanent Marker', cursive;
     color: #d64161;
 }
 
 .card-component{
     padding: 20px;
+    padding-bottom: 0;
     cursor: pointer;
 }
 

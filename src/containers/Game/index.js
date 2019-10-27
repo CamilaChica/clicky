@@ -49,7 +49,9 @@ class Game extends Component
             cards:this.cards,
             clickedCards:[],
             score:0,
-            highestScore:0
+            highestScore:0,
+            wins:0,
+            loses:0
         }
     }
 
@@ -57,13 +59,26 @@ class Game extends Component
         
         if(this.state.clickedCards.includes(card.id))
         {
-            showMessage("You lose!!");
+            showMessage("You lost!!");
             this.setState({
                 clickedCards:[],
+                wins:this.state.loses+1,
                 score:0,
                 cards:randomizeArray(this.state.cards)
             })
         }
+        else if((this.state.clickedCards.length+1)===this.state.cards.length)
+        {
+            showMessage("You won!!");
+            this.setState({
+                clickedCards:[],
+                wins:this.state.wins+1,
+                score:0,
+                highestScore:this.state.cards.length,
+                cards:randomizeArray(this.state.cards)
+        })
+        }
+
         else
         {
             this.setState({
@@ -77,7 +92,7 @@ class Game extends Component
     render()
     {
         console.log(this.state.clickedCards)
-        return <div>
+        return <div className="bg">
         <h1><b>Tasty Ice Cream</b></h1>
         <div className="row">
             <div className="col-6">
@@ -87,6 +102,14 @@ class Game extends Component
             <h2>Your Highest Score: {this.state.highestScore}</h2>
             </div>
         </div>
+        <div className="row">
+        <div className="col-6">
+        <h3><b>Wins: {this.state.wins}</b></h3>
+        </div>
+        <div className="col-6">
+        <h3>Loses: {this.state.loses}</h3>
+        </div>
+    </div>
         <div className="row">
         {this.state.cards.map((card,index)=><Card key={index} onClick={()=>this.cardClicked(card)} image={card.image} />)}
         </div>
