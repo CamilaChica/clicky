@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
 import Card from '../../components/Card';
+import {randomizeArray,showMessage} from '../../utils/utils';
 
 class Game extends Component
 {
@@ -38,7 +39,7 @@ class Game extends Component
     cardClicked=(card)=>{
         if(this.state.clickedCards.includes(card.id))
         {
-            alert("You lose!");
+            showMessage("You lose!");
             this.setState({
                 clickedCards:[],
                 score:0
