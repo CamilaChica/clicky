@@ -42,7 +42,7 @@ class Game extends Component
             showMessage("You lose!");
             this.setState({
                 clickedCards:[],
-                score:0
+                score:0,
                 cards:randomizeArray(this.state.cards)
             })
         }
