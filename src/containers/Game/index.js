@@ -54,29 +54,28 @@ class Game extends Component
             loses:0
         }
     }
+    resetGame=(win=false)=>{
+        showMessage(win?"You won!!":"You lost");
+        this.setState({
+            clickedCards:[],
+            score:0,
+            cards:randomizeArray(this.state.cards) ,
+            wins:win?this.state.wins+1:this.state.wins,
+            loses:!win?this.state.loses+1:this.state.loses,
+            highestScore:win?this.state.cards.length:this.state.highestScore,       
+        })
+    }
+
 
     cardClicked=(card)=>{
         
         if(this.state.clickedCards.includes(card.id))
         {
-            showMessage("You lost!!");
-            this.setState({
-                clickedCards:[],
-                wins:this.state.loses+1,
-                score:0,
-                cards:randomizeArray(this.state.cards)
-            })
+            this.resetGame();
         }
         else if((this.state.clickedCards.length+1)===this.state.cards.length)
         {
-            showMessage("You won!!");
-            this.setState({
-                clickedCards:[],
-                wins:this.state.wins+1,
-                score:0,
-                highestScore:this.state.cards.length,
-                cards:randomizeArray(this.state.cards)
-        })
+            this.resetGame(true);
         }
 
         else
