@@ -31,7 +31,7 @@ class HomePage extends Component
                 <input name="email" value={this.state.email} onChange={this.handleInputChange} type="text" name="email" placeholder="Enter your E-Mail" className="form-control"/>
             </div>
             <div className="input-group">
-                <input name="password" value={this.state.password} onChange={this.handleInputChange}  type="text" name="email" placeholder="Enter your Password" className="form-control"/>
+                <input name="password" value={this.state.password} onChange={this.handleInputChange}  type="text" name="password" placeholder="Enter your Password" className="form-control"/>
             </div>
             <p></p>
             <button onClick={this.authenticate} className="btn btn-primary">Log In</button>
