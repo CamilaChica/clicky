@@ -22,7 +22,7 @@ class HomePage extends Component
     render()
     {
         return <div>
-            <h1 className="col-7 offset-3 Homph1">Welcome to 'Tasty Ice Cream'</h1>
+            <h1 className="col-7 offset-3 Homph1">Welcome to <b>Tasty Ice Cream</b></h1>
             <h4 className="col-6 offset-3"><b>This is a Clicky Game.</b></h4>
             {!this.props.authenticated&&
     <div className="row">
